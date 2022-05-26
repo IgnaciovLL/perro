@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styl.css">
+    <title>Edad de perro</title>
+</head>
+<body>
+    <h1>Edad de perro</h1>
+    <section>
+        <div class="conjunto">
+            <div class="in">
+                <div class="te">
+                    <h2>Ingrese el nombre del perro:</h2>
+                    <input type="text" id="nombre" size="">
+                </div>
+                <br>
+                <h2>Ingrese la edad del perro:</h2>
+                <input type="number" id="n1" size="20">
+            </div>
+            <div class="but">
+                <button id="calculo">Calcular</button>
+                <button id="7">x7</button>
+                <input type="reset" value="Limpiar">
+            </div>
+            <br><br><br>
+            <div class="resultado" id="salida"></div>
+            <div class="resultado" id="hol"></div>
+        </div>
+        <br><br>
+        <div class="ima">
+            <img src="dog.jpg" >
+        </div>
+
+        <script>
+            var a = document.getElementById("calculo");
+            a.addEventListener("click",calc);
+
+            var b = document.getElementById("7");
+            b.addEventListener("click",seven);
+
+            function calc()
+            {
+                var age_dog = parseInt(document.getElementById("n1").value);
+                var name = document.getElementById("nombre").value;
+                
+                var age_human = (16 * Math.log(age_dog) + 31).toFixed(0);
+
+                document.getElementById("salida").innerHTML = "La edad del perro en humano es: "+age_human;
+
+                document.getElementById("hol").innerHTML = "El nombre del perro es: "+name;
+            }
+
+            function seven()
+            {
+                var sie = parseInt(document.getElementById("n1").value);
+                var name = document.getElementById("nombre").value;
+                
+                var col = sie * 7;
+                document.getElementById("salida").innerHTML = "La edad del perro en humano es: "+col;
+                document.getElementById("hol").innerHTML = "El nombre del perro es: "+name;
+            }
+            
+
+            </script>
+    </section>
+</body>
+</html>
